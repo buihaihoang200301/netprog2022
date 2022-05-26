@@ -1,0 +1,40 @@
+Report for Labwork 2
+
+First i have function named "DNS". This function has 2 arguments is "hostname" and "ip".
+- ip: hold the IP address of the provided host name
+- hostname: will be pass to the function
+
+	int DNS(char*hostname,char*ip) {
+
+Second, i have 2 pointer named "hostent" and "in_addr"
+If statement to check the value returned by the "gethostbyname" function. If NULL, print error, else for loop will be run, the DNS will looked up for the ip address
+
+	struct hostent *H;
+	    struct in_addr **Addrlist;
+	    if ((H = gethostbyname(hostname))==NULL) {
+		herror("Error");
+		return 1;
+	    }
+	
+	Addrlist = (struct in_addr **) H->h_addr_list;
+	    for (int i=0;Addrlist[i] != NULL;i++) {
+		strcpy(ip,inet_ntoa(*Addrlist[i]));
+		return 0;
+	    }
+	    return 1;
+
+
+
+Then, main() function accept "argc" and "argv". We have 1 'If' function to check if <=2. This mean i need executable file and the hostname to resolved.
+
+	int main (int argc, char*argv[]) {
+	    if (argc<2) {
+		printf("No hostport");
+	    }
+	    
+Final, i created pointer named "hostname" and assigned the value of second command line. I created characer array of size 100 bytes to hold the IP address. I call again "DNS" function with the "hostname" and "ip". After that, print hostname and ip address.
+
+	char *hostname = argv[1];
+	    char ip[100];
+	    DNS(hostname,ip);
+	    printf("%s resolve to %s",hostname,ip);
