@@ -10,12 +10,18 @@ int main() {
 	struct hostent *h;
 	int sockfd;
 	unsigned short port = 8784;
+	char domain[200];
 	
 	if ((sockfd=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf("Error");
 	
 	}
-	if ((h=gethostbyname("127.0.0.1")) == NULL) {
+	
+	struct in_addr * address;
+	printf("Enter the domain: ");
+	scanf("%s",domain);
+	
+	if ((h=gethostbyname(domain)) == NULL) {
 		printf("Unknown host!");
 	
 	}
