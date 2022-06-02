@@ -43,7 +43,7 @@ int main(){
         printf("Send messages: ");
         scanf("%s",clim);
 
-        if (send(sockfd, clim, sizeof(clim), 0)<0){
+        if (send(sockfd, clim, strlen(clim)+1, 0)<0){
             printf("Can not send \n");
         }
 
@@ -51,7 +51,7 @@ int main(){
             printf("Can not receive\n");
         }
 
-        printf("Server: %s \n", svms);
+        printf("Server: %s \n", svm);
     }
 
     return 0;

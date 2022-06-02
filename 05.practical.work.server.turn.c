@@ -43,16 +43,16 @@ int main(){
     printf("Connected \n");
     
     while (1){
-        if (recv(clientfd, clim, sizeof(clim), 0)<0){
+        if (recv(clientfd, clim, sizeof(clim)+1, 0)<0){
             printf("Can not receive \n");
         }
 
         printf("Client: %s \n", clim);
 
         printf("Send message: ");
-        scanf("%s",svms);
+        scanf("%s",svm);
 
-        if (send(clientfd, svm, sizeof(svm), 0)<0){
+        if (send(clientfd, svm, strlen(svm), 0)<0){
             printf("Can not send\n");
         }    
     }
