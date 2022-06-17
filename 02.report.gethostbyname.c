@@ -31,5 +31,5 @@ int main (int argc, char*argv[]) {
     char *hostname = argv[1];
     char ip[100];
     DNS(hostname,ip);
-    printf("%s resolve to %s",hostname,ip);
+    printf("%s resolve to %s\n",hostname,ip);
 }
