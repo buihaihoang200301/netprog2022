@@ -15,8 +15,7 @@ If statement to check the value returned by the "gethostbyname" function. If NUL
 		herror("Error");
 		return 1;
 	    }
-	
-	Addrlist = (struct in_addr **) H->h_addr_list;
+		Addrlist = (struct in_addr **) H->h_addr_list;
 	    for (int i=0;Addrlist[i] != NULL;i++) {
 		strcpy(ip,inet_ntoa(*Addrlist[i]));
 		return 0;
