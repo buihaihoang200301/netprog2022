@@ -11,7 +11,6 @@ int main(){
     unsigned short port = 8784;
     char cliem[1000], ms[1000];
 
-
     if ((sockfd =  socket(AF_INET, SOCK_STREAM, 0)) < 0) {
         printf("Error\n");
         return 1;

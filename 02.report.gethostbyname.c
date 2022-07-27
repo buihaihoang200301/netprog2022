@@ -20,8 +20,7 @@ int DNS(char*hostname,char*ip) {
         return 0;
     }
     return 1;
-  
-}
+  }
 
 
 int main (int argc, char*argv[]) {

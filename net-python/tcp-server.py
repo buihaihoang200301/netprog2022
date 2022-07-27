@@ -6,7 +6,6 @@ s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind(("",PORT))
 s.listen(0)
 
-
 iscontinue=1
 while iscontinue==1:
     try:

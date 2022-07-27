@@ -34,8 +34,7 @@ int main(){
         return 1;
     }
 
- 
-    clen = sizeof(caddr);
+     clen = sizeof(caddr);
     if ((clientfd = accept(sockfd, (struct sockaddr *) &caddr, &clen)) < 0) {
         printf("Error\n"); 
         return 1;

@@ -28,8 +28,7 @@ int main () {
     if (listen(sockfd, 5) < 0) {
         printf("Error");
     }
-    
-    clen=sizeof(caddr);
+        clen=sizeof(caddr);
     if ((clientfd=accept(sockfd, (struct sockaddr *) &caddr, &clen)) < 0) {
         printf("Error");
 

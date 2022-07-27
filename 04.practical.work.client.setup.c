@@ -15,16 +15,14 @@ int main() {
 	if ((sockfd=socket(AF_INET, SOCK_STREAM, 0)) < 0) {
 		printf("Error");
 	
-	}
-	
+	}	
 	struct in_addr * address;
 	printf("Enter the domain: ");
 	scanf("%s",domain);
 	
 	if ((h=gethostbyname(domain)) == NULL) {
 		printf("Unknown host!");
-	
-	}
+		}
 	memset(&saddr, 0, sizeof(saddr));
 	saddr.sin_family = AF_INET;
 	memcpy((char *) &saddr.sin_addr.s_addr, h->h_addr_list[0], h->h_length);

@@ -38,8 +38,7 @@ int main(){
         return 1;
     }
     printf("Connected \n");
-    
-    while (1){
+        while (1){
         printf("Send messages: ");
         scanf("%s",clim);
 
