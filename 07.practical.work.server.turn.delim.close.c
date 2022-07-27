@@ -4,7 +4,6 @@
 #include<sys/socket.h>
 #include<arpa/inet.h> 
 #include<netdb.h>
-
 int main(){
 
     int sockfd, clen, clientfd;
